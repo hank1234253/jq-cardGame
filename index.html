@@ -22,9 +22,10 @@
             background-color: lightskyblue;
         }
 
-        .box:hover{
+        .box:hover {
             opacity: 0.8;
         }
+
         .color-1 {
             background-image: url("./img/1.jpg");
             background-repeat: no-repeat;
@@ -88,12 +89,9 @@
         .none {
             display: none;
         }
-        button{
-            position: fixed;
-            margin-top: 3vh;
-            left: 47vw;
-        }
-        .row{
+
+
+        .row {
             min-height: 11vw;
         }
     </style>
@@ -101,7 +99,7 @@
 
 <body>
     <div class="container text-center">
-        <div class="row">
+        <div class="row mt-3">
             <div class="col p-1">
                 <div class="box"></div>
             </div>
@@ -170,26 +168,37 @@
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-secondary">Again</button>
+    <div class="text-center">
+        <button type="button" class="btn btn-secondary">Again</button>
+    </div>
 
     <script>
         $(document).ready(function () {
-            let num;
-            let tmp;
-            let click;
-            let flag;
-            let ready_flag=0;
+            let num = [];
+            let tmp = 0;
+            let click = 0;
+            let flag = 0;
+            let ready_flag = 0;
+            let timeout = 0;
+            let time=0;
             ready();
 
             $.each($(".box"), function (index, value) {
                 $(value).click(function () {
+                    if ($("[class^='box color']").length == 2) {
+                        let same=check();
+                        if(same==1&&$(this).attr('class')!="box"){
+                            return 0;
+                        }
+                    }
                     if (flag == 0) {
                         click--;
                         $(this).attr("class", `box color-${Math.floor(num[index] / 10) + 1}`)
                         if (click <= 0) {
                             if ($("[class^='box color']").length == 2) {
                                 flag = 1;
-                                setTimeout(check, 500);
+                                clearTimeout(timeout);
+                                timeout = setTimeout(check, 2000);
                             } else {
                                 click++;
                             }
@@ -198,31 +207,32 @@
                 })
             });
 
-            $("button").click(function(){
+            $("button").click(function () {
                 ready();
             })
 
 
 
             function ready() {
-                if(ready_flag==0){
-                    ready_flag=1;
-                num=[];
-                click = 2;
-                flag = 1;
+                if (ready_flag == 0) {
+                    ready_flag = 1;
+                    num = [];
+                    click = 2;
+                    flag = 1;
 
-                while (num.length < 20) {
-                    tmp = Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 2);
-                    if (num.indexOf(tmp) == -1) {
-                        num.push(tmp);
+                    while (num.length < 20) {
+                        tmp = Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 2);
+                        if (num.indexOf(tmp) == -1) {
+                            num.push(tmp);
+                        }
                     }
-                }
+ 
 
 
-                $.each($(".box"), function (index, value) {
-                    $(value).attr("class", `box color-${Math.floor(num[index] / 10) + 1}`)
-                })
-                setTimeout(reset, 5000);
+                    $.each($(".box"), function (index, value) {
+                        $(value).attr("class", `box color-${Math.floor(num[index] / 10) + 1}`)
+                    })
+                    setTimeout(reset, 5000);
                 }
             };
 
@@ -231,35 +241,34 @@
                     $(value).attr("class", "box")
                 })
                 flag = 0;
-                ready_flag=0;
+                ready_flag = 0;
+                time=0;
+                
             }
 
 
 
             function check() {
-                let tmp = 0;
-                let check = 0;
-                $.each($("[class^='box color']"), function (index, value) {
-                    if (index == 0) {
-                        tmp = $(value).attr('class');
-                    } else {
-                        if ($(value).attr('class') == tmp) {
-                            check = 1;
+                if ($("[class^='box color']").length == 2) {
+                    let tmp = 0;
+                    let check = 0;
+                    $.each($("[class^='box color']"), function (index, value) {
+                        if (index == 0) {
+                            tmp = $(value).attr('class');
+                        } else {
+                            if ($(value).attr('class') == tmp) {
+                                $("[class^='box color']").attr("class", "box none");
+                                check=1;
+                            }else{
+                                $("[class^='box color']").attr("class", "box");
+                            }
                         }
-                    }
-                });
+                    });
 
-                if (check == 1) {
-                    $("[class^='box color']").attr("class", "box none");
-                } else {
-                    $("[class^='box color']").attr("class", "box");
-                }
 
-                click = 2;
-                flag = 0;
-                if($(".none").length==20){
-                    alert("You win!");
-                    ready();
+                    click = 2;
+                    flag = 0;
+                    return check;
                 }
             }
         });
