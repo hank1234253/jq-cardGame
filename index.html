@@ -19,7 +19,10 @@
             height: 10vw;
             border-radius: 1em;
             box-shadow: 0 0 8px #ccc;
-            background-color: lightskyblue;
+            background-image: url("./img/card.jpg");
+            transition: 1s;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .box:hover {
@@ -30,60 +33,80 @@
             background-image: url("./img/1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-2 {
             background-image: url("./img/2.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-3 {
             background-image: url("./img/3.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-4 {
             background-image: url("./img/4.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-5 {
             background-image: url("./img/5.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-6 {
             background-image: url("./img/6.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-7 {
             background-image: url("./img/7.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-8 {
             background-image: url("./img/8.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-9 {
             background-image: url("./img/9.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .color-10 {
             background-image: url("./img/10.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            transform:rotateY(180deg);
+            transition: 0.5s;
         }
 
         .none {
@@ -206,7 +229,7 @@
                             if ($("[class^='box color']").length == 2) {
                                 flag = 1;
                                 clearTimeout(timeout);
-                                timeout = setTimeout(check, 750);
+                                timeout = setTimeout(check, 1000);
                             } else {
                                 click++;
                             }
