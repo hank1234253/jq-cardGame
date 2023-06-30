@@ -99,7 +99,7 @@
 
 <body>
     <div class="container text-center">
-        <div class="row mt-3">
+        <div class="row mt-2">
             <div class="col p-1">
                 <div class="box"></div>
             </div>
@@ -169,7 +169,14 @@
         </div>
     </div>
     <div class="text-center">
-        <button type="button" class="btn btn-secondary">Again</button>
+        <div>
+            <span>時間:</span>
+            <span id="time">0</span>
+            <span>秒</span>
+        </div>
+        <div class="mt-1">
+            <button type="button" class="btn btn-secondary">Again</button>
+        </div>
     </div>
 
     <script>
@@ -180,14 +187,15 @@
             let flag = 0;
             let ready_flag = 0;
             let timeout = 0;
-            let time=0;
+            let time = 0;
+            let timeInterval = 0;
             ready();
 
             $.each($(".box"), function (index, value) {
                 $(value).click(function () {
                     if ($("[class^='box color']").length == 2) {
-                        let same=check();
-                        if(same==1&&$(this).attr('class')!="box"){
+                        let same = check();
+                        if (same == 1 && $(this).attr('class') != "box") {
                             return 0;
                         }
                     }
@@ -198,7 +206,7 @@
                             if ($("[class^='box color']").length == 2) {
                                 flag = 1;
                                 clearTimeout(timeout);
-                                timeout = setTimeout(check, 2000);
+                                timeout = setTimeout(check, 750);
                             } else {
                                 click++;
                             }
@@ -219,14 +227,16 @@
                     num = [];
                     click = 2;
                     flag = 1;
-
+                    time = 0;
+                    $("#time").text(0);
+                    clearInterval(timeInterval);
                     while (num.length < 20) {
                         tmp = Math.floor(Math.random() * 10) * 10 + Math.floor(Math.random() * 2);
                         if (num.indexOf(tmp) == -1) {
                             num.push(tmp);
                         }
                     }
- 
+
 
 
                     $.each($(".box"), function (index, value) {
@@ -242,8 +252,8 @@
                 })
                 flag = 0;
                 ready_flag = 0;
-                time=0;
-                
+                clearInterval(timeInterval);
+                timeInterval = setInterval(timer, 1000);
             }
 
 
@@ -258,8 +268,8 @@
                         } else {
                             if ($(value).attr('class') == tmp) {
                                 $("[class^='box color']").attr("class", "box none");
-                                check=1;
-                            }else{
+                                check = 1;
+                            } else {
                                 $("[class^='box color']").attr("class", "box");
                             }
                         }
@@ -268,8 +278,17 @@
 
                     click = 2;
                     flag = 0;
+                    if ($(".none").length == 20) {
+                        alert(`You win!你花了${time}秒完成!`);
+                        ready();
+                    }
                     return check;
                 }
+            }
+
+            function timer() {
+                time++;
+                $("#time").text(time);
             }
         });
 
