@@ -1,5 +1,5 @@
 <?php
-    $dsn="mysql:host=localhost;charset=utf8;dbname=game";
+    $dsn="mysql:host=localhost;charset=utf8;dbname=rank";
     $pdo=new PDO($dsn,"root","");
 
     if(!empty($_POST['time'])){

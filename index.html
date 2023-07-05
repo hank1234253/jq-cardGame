@@ -172,7 +172,7 @@
     <div class="name text-center">
         <div class="height mb-5"></div>
         <label class="mb-3" for="name">你的名稱</label><br>
-        <input class="mb-3" type="text" name="name" id="name"><br>
+        <input class="mb-3" type="text" name="name" id="name" onkeyup="value=replaceStr(value)"><br>
         <button type="button" class="btn btn-primary" id="begin">開始遊戲</button><br>
         <button type="button" class="btn btn-secondary mt-3 showBtn">查看排名</button>
     </div>
@@ -252,7 +252,7 @@
     <div class="flex">
         <div class="user none">
             <span>玩家</span>
-            <input type="text" class="username">
+            <input type="text" class="username" onkeyup="value=replaceStr(value)">
             <div>
             <button type="button" class="btn btn-secondary mt-1 showBtn">查看排名</button>
 
@@ -315,6 +315,11 @@
         </div>
     </div>
     <script>
+        function replaceStr(value){
+            const pattern=/[`~!@#$^&*()=|{}':;',\\\[\]\.<>\/?~！@#￥……&*（）——|{}【】'；：""'。，、？\s]/g;
+            return value.replace(pattern,"");
+        }
+
         $(document).ready(function () {
             let num = [];
             let tmp = 0;
@@ -364,12 +369,13 @@
             })
 
             $(".username").change(function () {
-                if ($(".username").val() != "") {
-                    name = $(".username").val();
+                let tmp=replaceStr($(".username").val());
+                if (tmp != "") {
+                    name = tmp;
+                    $(".username").val(tmp);
                 } else {
                     $(".username").val(name);
                 }
-                console.log(name);
             })
 
             $(".again").click(function () {
