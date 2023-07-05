@@ -14,6 +14,10 @@
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
+        body {
+            background-color: antiquewhite;
+        }
+
         .box {
             width: 10vw;
             height: 10vw;
@@ -33,7 +37,7 @@
             background-image: url("./img/1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -41,7 +45,7 @@
             background-image: url("./img/2.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -49,7 +53,7 @@
             background-image: url("./img/3.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -57,7 +61,7 @@
             background-image: url("./img/4.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -65,7 +69,7 @@
             background-image: url("./img/5.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -73,7 +77,7 @@
             background-image: url("./img/6.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -81,7 +85,7 @@
             background-image: url("./img/7.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -89,7 +93,7 @@
             background-image: url("./img/8.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -97,7 +101,7 @@
             background-image: url("./img/9.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
@@ -105,103 +109,211 @@
             background-image: url("./img/10.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            transform:rotateY(180deg);
+            transform: rotateY(180deg);
             transition: 0.5s;
         }
 
-        .none {
+        .none,.clear{
             display: none;
         }
 
 
-        .row {
+        .height {
             min-height: 11vw;
+        }
+
+        .rank,
+        .show {
+            position: fixed;
+            background-color: antiquewhite;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+
+        .back {
+            width: 5vw;
+            height: 4vw;
+            border-radius: 3vw;
+            position: fixed;
+            left: 2vw;
+            bottom: 2vw;
+            z-index: 3;
+        }
+
+        .name {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: antiquewhite;
+            z-index: 2;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .user {
+            position: fixed;
+            left: 25vw;
         }
     </style>
 </head>
 
 <body>
-    <div class="container text-center">
-        <div class="row mt-2">
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-            <div class="col p-1">
-                <div class="box"></div>
-            </div>
-        </div>
+    <button type="button" onclick="location.href='../'" class="btn btn-secondary back">回作品集</button>
+    <div class="name text-center">
+        <div class="height mb-5"></div>
+        <label class="mb-3" for="name">你的名稱</label><br>
+        <input class="mb-3" type="text" name="name" id="name"><br>
+        <button type="button" class="btn btn-primary" id="begin">開始遊戲</button><br>
+        <button type="button" class="btn btn-secondary mt-3 showBtn">查看排名</button>
     </div>
-    <div class="text-center">
-        <div>
-            <span>時間:</span>
-            <span id="time">0</span>
-            <span>秒</span>
+
+    <div class="container text-center">
+        <div class="row height mt-2">
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
         </div>
-        <div class="mt-1">
-            <button type="button" class="btn btn-secondary">Again</button>
+        <div class="row height">
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+        </div>
+        <div class="row height">
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+        </div>
+        <div class="row height">
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
+            <div class="col p-1">
+                <div class="box"></div>
+            </div>
         </div>
     </div>
 
+
+    <div class="flex">
+        <div class="user none">
+            <span>玩家</span>
+            <input type="text" class="username">
+            <div>
+            <button type="button" class="btn btn-secondary mt-1 showBtn">查看排名</button>
+
+            </div>
+        </div>
+        <div>
+            <div>
+                <span>時間:</span>
+                <span id="time">0</span>
+                <span>秒</span>
+            </div>
+            <div class="mt-1">
+                <button type="button" class="btn btn-secondary again">Again</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="show none">
+        <div class="container text-center">
+            <div class="row mt-5">
+                <div class="col">
+                    <h1>排行</h1>
+                </div>
+            </div>
+            <div class="row" id="showRank">
+                <div class="col-4">排名</div>
+                <div class="col-4">姓名</div>
+                <div class="col-4">秒數</div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mt-1">
+                        <button type="button" class="btn btn-secondary close">返回</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rank none">
+        <div class="container text-center">
+            <div class="row mt-5">
+                <div class="col">
+                    <h1>排行</h1>
+                </div>
+            </div>
+            <div class="row" id="rank">
+                <div class="col-4">排名</div>
+                <div class="col-4">姓名</div>
+                <div class="col-4">秒數</div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mt-1">
+                        <button type="button" class="btn btn-secondary again">Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         $(document).ready(function () {
             let num = [];
@@ -212,7 +324,9 @@
             let timeout = 0;
             let time = 0;
             let timeInterval = 0;
-            ready();
+            let name;
+
+
 
             $.each($(".box"), function (index, value) {
                 $(value).click(function () {
@@ -237,12 +351,39 @@
                     }
                 })
             });
+            $("#begin").click(function () {
+                name = $("#name").val();
+                if (name != "") {
+                    $(".name").css("display", "none");
+                    $(".user").attr("class", "user");
+                    $(".username").val(name);
+                    ready();
+                } else {
+                    alert("請輸入名稱");
+                }
+            })
 
-            $("button").click(function () {
+            $(".username").change(function () {
+                if ($(".username").val() != "") {
+                    name = $(".username").val();
+                } else {
+                    $(".username").val(name);
+                }
+                console.log(name);
+            })
+
+            $(".again").click(function () {
+                $(".rank").attr("class", "rank none");
                 ready();
             })
 
+            $(".showBtn").click(function () {
+                showRank();
+            })
 
+            $(".close").click(function () {
+                $(".show").attr("class", "show none");
+            })
 
             function ready() {
                 if (ready_flag == 0) {
@@ -290,7 +431,7 @@
                             tmp = $(value).attr('class');
                         } else {
                             if ($(value).attr('class') == tmp) {
-                                $("[class^='box color']").attr("class", "box none");
+                                $("[class^='box color']").attr("class", "box clear");
                                 check = 1;
                             } else {
                                 $("[class^='box color']").attr("class", "box");
@@ -301,12 +442,68 @@
 
                     click = 2;
                     flag = 0;
-                    if ($(".none").length == 20) {
-                        alert(`You win!你花了${time}秒完成!`);
-                        ready();
+                    if ($(".clear").length == 20) {
+                        clearInterval(timeInterval);
+                        rank();
                     }
                     return check;
                 }
+            }
+
+            function rank() {
+
+                $.ajax({
+                    type: "post",
+                    url: "./ajax/rank.php",
+                    data: { time: time, name: name },
+                    dataType: "json",
+                    success: function (response) {
+                        $(".rank").attr("class", "rank");
+                        let html = `
+                            <div class="col-4">排名</div>
+                             <div class="col-4">姓名</div>
+                            <div class="col-4">秒數</div>
+                        `;
+                        $("#rank").html(html);
+                        for (let i = 0; i < response.length; i++) {
+                            let tmp = "<div class='col-4 p-2'>" + (i + 1) + "</div>";
+                            $("#rank").append(tmp);
+                            tmp = "<div class='col-4 p-2'>" + response[i].name + "</div>";
+                            $("#rank").append(tmp);
+                            tmp = "<div class='col-4 p-2'>" + response[i].time + "</div>";
+                            $("#rank").append(tmp);
+                        }
+
+                    }
+                });
+            }
+
+            function showRank() {
+
+                $.ajax({
+                    type: "post",
+                    url: "./ajax/rank.php",
+                    dataType: "json",
+                    success: function (response) {
+                        $(".show").attr("class", "show");
+                        let html = `
+                            <div class="col-4">排名</div>
+                             <div class="col-4">姓名</div>
+                            <div class="col-4">秒數</div>
+                        `;
+                        $("#showRank").html(html);
+                        for (let i = 0; i < response.length; i++) {
+
+                            let tmp = "<div class='col-4 p-2'>" + (i + 1) + "</div>";
+                            $("#showRank").append(tmp);
+                            tmp = "<div class='col-4 p-2'>" + response[i].name + "</div>";
+                            $("#showRank").append(tmp);
+                            tmp = "<div class='col-4 p-2'>" + response[i].time + "</div>";
+                            $("#showRank").append(tmp);
+                        }
+
+                    }
+                });
             }
 
             function timer() {
