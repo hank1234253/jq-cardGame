@@ -357,14 +357,16 @@
                 })
             });
             $("#begin").click(function () {
-                name = $("#name").val();
-                if (name != "") {
+                let tmp=replaceStr($("#name").val());
+                if(tmp!=""){
+                    name = tmp;
                     $(".name").css("display", "none");
                     $(".user").attr("class", "user");
                     $(".username").val(name);
                     ready();
                 } else {
                     alert("請輸入名稱");
+                    $("#name").val("")
                 }
             })
 
